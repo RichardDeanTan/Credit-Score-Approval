@@ -181,7 +181,7 @@ def main():
     else:
         st.session_state.available_models = ["Random Forest", "Neural Network"]
     
-    # Sidebar
+    # === Sidebar ===
     with st.sidebar:
         st.header("🤖 Model Selection")
         
@@ -194,20 +194,21 @@ def main():
         st.markdown("---")
         st.header("📊 Model Performance")
         
+        st.success("Metrics: F1-Macro Score")
         if model_type == "Random Forest":
             st.info("""
             **🌲 Random Forest Model**
+            - **Train:** 85.81%
+            - **Test:** 76.97%
             - **Algorithm:** Optimized Random Forest
-            - **Features:** 34 engineered features
-            - **Classes:** Poor, Standard, Good
             - **Optimization:** Optuna hyperparameter tuning
             """)
         else:
             st.info("""
             **🧠 Neural Network Model**
+            - **Train:** 85.94%
+            - **Test:** 78.36%
             - **Architecture:** Deep Neural Network
-            - **Features:** 34 engineered features
-            - **Classes:** Poor, Standard, Good
             - **Framework:** TensorFlow/Keras
             """)
         
